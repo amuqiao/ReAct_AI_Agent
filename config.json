@@ -5,10 +5,11 @@
         "temperature": 1.0,
         "max_iterations": 20
     },
-    "openai": {
+        "openai": {
         "use_model": true,
-        "model_name": "gpt-4o",
+        "model_name": "qwen-plus",
         "temperature": 1.0,
-        "max_iterations": 20
+        "max_iterations": 20,
+        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1"
     }
 }

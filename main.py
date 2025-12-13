@@ -19,7 +19,13 @@ def load_config():
 
 def get_client(config):
     if config['openai'].get('use_model', True):
-        return OpenAI(api_key=os.environ.get("API_KEY"))
+        client_params = {
+            'api_key': os.environ.get("API_KEY"),
+            'base_url': config['openai'].get('base_url')
+        }
+        # Remove None values
+        client_params = {k: v for k, v in client_params.items() if v is not None}
+        return OpenAI(**client_params)
     else:
         return OllamaClient()
 
